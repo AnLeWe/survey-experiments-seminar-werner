@@ -15,11 +15,21 @@ class DemoPage(Page):
     form_model = Player
     form_fields = ['age_question']
 
+class CatsAndDogsPage(Page):
+    form_model = Player
+    form_fields = ['cats_or_dogs']
+
+class PineappleOnPizzaPage(Page):
+    form_model = Player
+    form_fields = ['pineapple_on_pizza']
+
 class EndPage(Page):
     #style: this is a good example of the style 'CamelCase' that one normally uses for classes
     form_model = Player
 
 #Here we define in which ordering we want the pages to be shown. We always start with a Welcome page and end with an End page.
 page_sequence = [Welcome,
-                DemoPage,           
+                DemoPage,
+                CatsAndDogsPage, 
+                PineappleOnPizzaPage,          
                 EndPage]

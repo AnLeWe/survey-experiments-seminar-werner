@@ -9,11 +9,16 @@
 <br>
 <h2> Survey Example </h2>
     <hr>
-    This is a demo page
+    This is a demo page. Whatever a demo page is. However, let's first get to know your age!
 
     <!-- This is the most basic way of implementing an input field -->
     {{ formfield "age_question"}}
 
+    <!-- This is the most basic way of implementing error handling -->
+    {{ formfield_errors 'age_question' }}
+
+    <p>NOTE: This is a mandatory question!</p>
+<hr>
    <button class="otree-btn-next btn btn-primary next-button otree-next-button">
     Next
 </button>
