@@ -13,7 +13,7 @@ class Welcome(Page):
 
 class DemoPage(Page):
     form_model = Player
-    form_fields = ['age_question']
+    form_fields = ['age_question', 'gender_question', 'has_travelled', 'travel_destination']
 
 class CatsAndDogsPage(Page):
     form_model = Player
@@ -23,6 +23,10 @@ class PineappleOnPizzaPage(Page):
     form_model = Player
     form_fields = ['pineapple_on_pizza']
 
+class MoneyPage(Page):
+    form_model = Player
+    form_fields = ['money_essay', 'money_question']
+
 class EndPage(Page):
     #style: this is a good example of the style 'CamelCase' that one normally uses for classes
     form_model = Player
@@ -31,5 +35,6 @@ class EndPage(Page):
 page_sequence = [Welcome,
                 DemoPage,
                 CatsAndDogsPage, 
-                PineappleOnPizzaPage,          
+                PineappleOnPizzaPage,
+                MoneyPage,          
                 EndPage]

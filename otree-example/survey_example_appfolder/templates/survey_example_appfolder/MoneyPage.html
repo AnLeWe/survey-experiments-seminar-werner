@@ -1,0 +1,26 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+
+{% block title %}
+{% endblock %}
+
+{% block content %}
+<br>
+<h2> Sponsorship </h2>
+    <hr>
+    <p>Sponsorship of whom? Me of course!</p>
+
+
+    {{ formfield 'money_essay' }}
+
+    {{ formfield 'money_question'}}
+
+    {{ formfield_errors 'money_question'}}
+
+<hr>
+   <button class="otree-btn-next btn btn-primary next-button otree-next-button">
+    Next
+</button>
+
+{% endblock %}
