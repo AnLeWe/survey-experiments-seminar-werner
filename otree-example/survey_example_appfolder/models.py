@@ -45,11 +45,16 @@ class Player(BasePlayer):
     operating_system = models.IntegerField()
     screen_height = models.IntegerField(initial=-999)
     screen_width = models.IntegerField(initial=-999)
-    entry_question = models.StringField(blank=True, #this is an optional field through blank = True
-                                        label = "<b>Have you ever participated in an online survey before?</b>")
+    entry_question = models.StringField(
+        blank=True, 
+        initial=-999, #this is an optional field through blank = True
+        abel = "<b>Have you ever participated in an online survey before?</b>")
     # DemoPage
-    age_question = models.IntegerField(max=110, min=1, label = "<b>How old are you?</b>")  #we can also have max and min guidelines
-    gender_question = models.StringField(label = "<b>Which is your gender?</b>")
+    age_question = models.IntegerField(
+        max=110, min=1,
+        label = "<b>How old are you?</b>")  #we can also have max and min guidelines
+    gender_question = models.StringField(
+        label = "<b>Which is your gender?</b>")
     # CatsAndDogsPage
     cats_or_dogs = models.IntegerField(label="<b>Do you prefer cats or dogs?</b>") 
     # PineappleOnPizzaPage
@@ -66,13 +71,16 @@ class Player(BasePlayer):
     has_travelled = models.BooleanField(
         choices=[
             [True, 'Yes'],
-            [False, 'No']
-        ]
+            [False, 'No']]
     )
-    travel_destination_popout = models.StringField(blank=True)
+    travel_destination_popout = models.LongStringField(
+        blank=True,
+        label="<b>Where did you go?</b>")
+    time_popout = models.StringField(initial=-999)
     # MoneyPage
-    money_essay = models.LongStringField(blank=True,
-                                         label="<b>Please write a short argumentative essay about why it is a moral duty to gift money to students:</b>")
+    money_essay = models.LongStringField(
+        blank=True,
+        label="<b>Please write a short argumentative essay about why it is a moral duty to gift money to students:</b>")
     money_question = models.CurrencyField(
         label="<b>How much do you want to gift me?</b>"
     )

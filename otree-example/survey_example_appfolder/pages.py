@@ -18,7 +18,7 @@ class Welcome(Page):
 
 class DemoPage(Page):
     form_model = Player
-    form_fields = ['age_question', 'gender_question', 'has_travelled', 'travel_destination_popout']
+    form_fields = ['age_question', 'gender_question', 'has_travelled', 'travel_destination_popout', 'time_popout']
 
 class CatsAndDogsPage(Page):
     form_model = Player

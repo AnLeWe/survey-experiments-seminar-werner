@@ -13,6 +13,10 @@
     var travelNo = document.getElementById('merkelNo');
     var divNo = document.getElementById('divNo');
 
+    // TIME: we are going to write the time the participant entered the page to a variable
+    var time = new Date(); //creates the current time
+    var time = time.toISOString(); //to.ISOString() ensures we get miliseconds
+
     // POPOUT: we are going to create a popout function that displays text only if some value is given in another question
     function popout() {
     var travelYes = document.getElementById('travelYes');
@@ -20,6 +24,9 @@
     
     divYes.style.display = travelYes.checked ? "block" : "none";
 }
+    // TIME
+    document.getElementById('time_popout').value = time; //we get the element (variable) we want to write the value to
+    //a sidenote: the time zone might be different in your localhost as in real life
 </script>
 {% endblock %}
 
@@ -39,18 +46,18 @@
 
     {{ formfield 'gender_question' }}
 
+
+<input id="time_popout" type="hidden" name="time_popout" />
+
 <div>
     <b>Have you ever travelled before?</b>
     <div><input id="travelYes" type="radio" name="has_travelled" value=True onclick="popout()" /> Yes</div>
     <div><input id="travelNo" type="radio" name="has_travelled" value=False onclick="popout()" /> No</div>
-    <br>
 </div>
     
     <!-- question asked if player has travelled before -->
 <div id="divYes" style="display: none">
-    <b>Where did you go?</b>
-    <br>
-    <input type="text" name="travel_destination_popout" />
+    {{ formfield 'travel_destination_popout' }}
 </div>
 
 <hr>
