@@ -5,6 +5,24 @@
 {% block title %}
 {% endblock %}
 
+{% block scripts %}
+<script>
+    //Get variables needed for our popout
+    var travelYes = document.getElementById('travelYes');
+    var divYes = document.getElementById('divYes');
+    var travelNo = document.getElementById('merkelNo');
+    var divNo = document.getElementById('divNo');
+
+    // POPOUT: we are going to create a popout function that displays text only if some value is given in another question
+    function popout() {
+    var travelYes = document.getElementById('travelYes');
+    var divYes = document.getElementById('divYes');
+    
+    divYes.style.display = travelYes.checked ? "block" : "none";
+}
+</script>
+{% endblock %}
+
 {% block content %}
 <br>
 <h2> General Questions </h2>
@@ -21,9 +39,19 @@
 
     {{ formfield 'gender_question' }}
 
-    {{ formfield 'has_travelled' }}
+<div>
+    <b>Have you ever travelled before?</b>
+    <div><input id="travelYes" type="radio" name="has_travelled" value=True onclick="popout()" /> Yes</div>
+    <div><input id="travelNo" type="radio" name="has_travelled" value=False onclick="popout()" /> No</div>
+    <br>
+</div>
     
-    {{ formfield 'travel_destination' }}
+    <!-- question asked if player has travelled before -->
+<div id="divYes" style="display: none">
+    <b>Where did you go?</b>
+    <br>
+    <input type="text" name="travel_destination_popout" />
+</div>
 
 <hr>
    <button class="otree-btn-next btn btn-primary next-button otree-next-button">

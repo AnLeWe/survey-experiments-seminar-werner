@@ -9,8 +9,11 @@ from otree.api import (
     currency_range,
 )
 
+import random  # for random group assignment
+
+
 author = 'Anna Werner'
-doc = 'This a very small survey to learn the basics, sonsisting of 3 pages and different types of questions.'
+doc = 'This a very small survey to learn the basics, consisting of 3 pages and different types of questions.'
 
 class Constants(BaseConstants):
     name_in_url = 'survey-example'
@@ -18,21 +21,38 @@ class Constants(BaseConstants):
     num_rounds = 1
 
 class Subsession(BaseSubsession):
-    pass
+    def creating_session(self):
+        """ 
+        otree function that
+        creates new subsession
+        Any variables that need to be custom are created here
+        """
+        for p in self.get_players(): # every player in player
+            # is assigned to either group 1 or 2  randomly.
+            p.group_assignment = random.Random().randint(1, 2)
 
 class Group(BaseGroup):
-    #we will only come to the group class when we look at advanced methods
-    pass
+   pass
 
 class Player(BasePlayer):
     #this is the most important feature of this file. We can collect all the variables used on the html pages here
     
-#The Variables are structured on the base of pages
-    #The Variables are structured on the base of pages
-    entry_question = models.StringField(blank = True, value = 999) #this is an optional field through blank = True
+    # Assigning each player to either group 1 or 2 in the beginning
+    group_assignment = models.IntegerField()
+
+    # Welcome
+    device_type = models.IntegerField()
+    operating_system = models.IntegerField()
+    screen_height = models.IntegerField(initial=-999)
+    screen_width = models.IntegerField(initial=-999)
+    entry_question = models.StringField(blank=True, #this is an optional field through blank = True
+                                        label = "<b>Have you ever participated in an online survey before?</b>")
+    # DemoPage
     age_question = models.IntegerField(max=110, min=1, label = "<b>How old are you?</b>")  #we can also have max and min guidelines
     gender_question = models.StringField(label = "<b>Which is your gender?</b>")
+    # CatsAndDogsPage
     cats_or_dogs = models.IntegerField(label="<b>Do you prefer cats or dogs?</b>") 
+    # PineappleOnPizzaPage
     pineapple_on_pizza = models.IntegerField(
         label = "<b>How much do you like pineapple on pizza?</b>",
         widget=widgets.RadioSelectHorizontal,
@@ -42,19 +62,24 @@ class Player(BasePlayer):
           [3, 'Neither'],
           [2, 'Don\'t like it'],
           [1, 'Not at all']])
+    # PopoutPage
     has_travelled = models.BooleanField(
-        label="<b>Have you ever travelled before?</b>",
         choices=[
             [True, 'Yes'],
             [False, 'No']
         ]
     )
-    travel_destination = models.StringField(blank=True, label="<b>Where did you go? This should be a conditional...</b>")
+    travel_destination_popout = models.StringField(blank=True)
+    # MoneyPage
     money_essay = models.LongStringField(blank=True,
-                                         label="<b>Please write a short agrumentative essay about why it is a moral duty to gift money to students:</b>")
+                                         label="<b>Please write a short argumentative essay about why it is a moral duty to gift money to students:</b>")
     money_question = models.CurrencyField(
         label="<b>How much do you want to gift me?</b>"
     )
+    # EndPage
+    group_assignment = models.IntegerField()  # Why do we assign the group on the last page?
+                                              # Also, not everyone completes the survey, bu we might still be interested in
+                                              # whether the person would have belonged to a certain group?
 
     #custom error message
         #has to: 
@@ -68,6 +93,6 @@ class Player(BasePlayer):
         
     def money_question_error_message(player, value):
         if value < 20:
-            return 'Aren\'t you a generous person?'
+            return 'Aren\'t you a generous person? Value should be 20 or higher!'
 
                                                 
