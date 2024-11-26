@@ -1,0 +1,101 @@
+participant.id_in_session,participant.code,participant.label,participant._is_bot,participant._index_in_pages,participant._max_page_index,participant._current_app_name,participant._current_page_name,participant.time_started_utc,participant.visited,participant.mturk_worker_id,participant.mturk_assignment_id,participant.payoff,session.code,session.label,session.mturk_HITId,session.mturk_HITGroupId,session.comment,session.is_demo,session.config.real_world_currency_per_point,session.config.participation_fee,session.config.name,survey_example_appfolder.1.player.id_in_group,survey_example_appfolder.1.player.role,survey_example_appfolder.1.player.payoff,survey_example_appfolder.1.player.device_type,survey_example_appfolder.1.player.operating_system,survey_example_appfolder.1.player.screen_height,survey_example_appfolder.1.player.screen_width,survey_example_appfolder.1.player.entry_question,survey_example_appfolder.1.player.age_question,survey_example_appfolder.1.player.gender_question,survey_example_appfolder.1.player.cats_or_dogs,survey_example_appfolder.1.player.pineapple_on_pizza,survey_example_appfolder.1.player.has_travelled,survey_example_appfolder.1.player.travel_destination_popout,survey_example_appfolder.1.player.time_popout,survey_example_appfolder.1.player.money_essay,survey_example_appfolder.1.player.money_question,survey_example_appfolder.1.player.group_assignment,survey_example_appfolder.1.group.id_in_subsession,survey_example_appfolder.1.subsession.round_number
+1,u09rl83g,,0,1,6,survey_example_appfolder,Welcome,2024-11-25 19:35:21.471270,1,,,0.0,70k8zne2,,,,,1,1.0,0.0,survey_example,1,,0.0,,,-999,-999,-999,,,,,,,,,,1,1,1
+2,6n3dtpdw,,0,0,6,,,,0,,,0.0,70k8zne2,,,,,1,1.0,0.0,survey_example,2,,0.0,,,-999,-999,-999,,,,,,,,,,0,1,1
+3,axtbo5z8,,0,0,6,,,,0,,,0.0,70k8zne2,,,,,1,1.0,0.0,survey_example,3,,0.0,,,-999,-999,-999,,,,,,,,,,0,1,1
+4,i0figoey,,0,0,6,,,,0,,,0.0,70k8zne2,,,,,1,1.0,0.0,survey_example,4,,0.0,,,-999,-999,-999,,,,,,,,,,1,1,1
+5,3hwxssde,,0,0,6,,,,0,,,0.0,70k8zne2,,,,,1,1.0,0.0,survey_example,5,,0.0,,,-999,-999,-999,,,,,,,,,,1,1,1
+6,x9ay2uof,,0,0,6,,,,0,,,0.0,70k8zne2,,,,,1,1.0,0.0,survey_example,6,,0.0,,,-999,-999,-999,,,,,,,,,,0,1,1
+7,bmge35kv,,0,0,6,,,,0,,,0.0,70k8zne2,,,,,1,1.0,0.0,survey_example,7,,0.0,,,-999,-999,-999,,,,,,,,,,1,1,1
+8,xcrhxyaa,,0,0,6,,,,0,,,0.0,70k8zne2,,,,,1,1.0,0.0,survey_example,8,,0.0,,,-999,-999,-999,,,,,,,,,,1,1,1
+9,s8g9tsdo,,0,0,6,,,,0,,,0.0,70k8zne2,,,,,1,1.0,0.0,survey_example,9,,0.0,,,-999,-999,-999,,,,,,,,,,1,1,1
+10,jujhpbhh,,0,0,6,,,,0,,,0.0,70k8zne2,,,,,1,1.0,0.0,survey_example,10,,0.0,,,-999,-999,-999,,,,,,,,,,1,1,1
+1,daie2f5k,,0,6,6,survey_example_appfolder,EndPage,2024-11-25 19:46:27.878498,1,,,0.0,hwp22ado,,,,,1,1.0,0.0,survey_example,1,,0.0,3,2,900,1440,no,22,female,,,0,,,argument,20.0,0,1,1
+2,z3t2taxz,,0,0,6,,,,0,,,0.0,hwp22ado,,,,,1,1.0,0.0,survey_example,2,,0.0,,,-999,-999,-999,,,,,,,,,,0,1,1
+3,de5mrys1,,0,0,6,,,,0,,,0.0,hwp22ado,,,,,1,1.0,0.0,survey_example,3,,0.0,,,-999,-999,-999,,,,,,,,,,1,1,1
+4,jqkc7o5g,,0,0,6,,,,0,,,0.0,hwp22ado,,,,,1,1.0,0.0,survey_example,4,,0.0,,,-999,-999,-999,,,,,,,,,,1,1,1
+5,dvs3u4x3,,0,0,6,,,,0,,,0.0,hwp22ado,,,,,1,1.0,0.0,survey_example,5,,0.0,,,-999,-999,-999,,,,,,,,,,1,1,1
+6,3gcmmft7,,0,0,6,,,,0,,,0.0,hwp22ado,,,,,1,1.0,0.0,survey_example,6,,0.0,,,-999,-999,-999,,,,,,,,,,1,1,1
+7,dkbm5rtd,,0,0,6,,,,0,,,0.0,hwp22ado,,,,,1,1.0,0.0,survey_example,7,,0.0,,,-999,-999,-999,,,,,,,,,,1,1,1
+8,fioe40j7,,0,0,6,,,,0,,,0.0,hwp22ado,,,,,1,1.0,0.0,survey_example,8,,0.0,,,-999,-999,-999,,,,,,,,,,0,1,1
+9,4kt4vygs,,0,0,6,,,,0,,,0.0,hwp22ado,,,,,1,1.0,0.0,survey_example,9,,0.0,,,-999,-999,-999,,,,,,,,,,1,1,1
+10,lfs8jpkt,,0,0,6,,,,0,,,0.0,hwp22ado,,,,,1,1.0,0.0,survey_example,10,,0.0,,,-999,-999,-999,,,,,,,,,,1,1,1
+1,gn3o67lz,,0,6,6,survey_example_appfolder,EndPage,2024-11-25 19:53:54.095479,1,,,0.0,fs0x5lih,,,,,1,1.0,0.0,survey_example,1,,0.0,3,2,900,1440,-999,23,female,1,,1,panama,,,23.0,1,1,1
+2,giofmrux,,0,6,6,survey_example_appfolder,EndPage,2024-11-25 19:56:47.318508,1,,,0.0,fs0x5lih,,,,,1,1.0,0.0,survey_example,2,,0.0,3,2,900,1440,-999,23,f,,,0,,,Essay,23.0,0,1,1
+3,eqw821lk,,0,0,6,,,,0,,,0.0,fs0x5lih,,,,,1,1.0,0.0,survey_example,3,,0.0,,,-999,-999,-999,,,,,,,,,,1,1,1
+4,bre5xfjk,,0,0,6,,,,0,,,0.0,fs0x5lih,,,,,1,1.0,0.0,survey_example,4,,0.0,,,-999,-999,-999,,,,,,,,,,1,1,1
+5,35g23arm,,0,0,6,,,,0,,,0.0,fs0x5lih,,,,,1,1.0,0.0,survey_example,5,,0.0,,,-999,-999,-999,,,,,,,,,,1,1,1
+6,xgqtedyg,,0,0,6,,,,0,,,0.0,fs0x5lih,,,,,1,1.0,0.0,survey_example,6,,0.0,,,-999,-999,-999,,,,,,,,,,0,1,1
+7,by6imk94,,0,0,6,,,,0,,,0.0,fs0x5lih,,,,,1,1.0,0.0,survey_example,7,,0.0,,,-999,-999,-999,,,,,,,,,,0,1,1
+8,snrwbmhp,,0,0,6,,,,0,,,0.0,fs0x5lih,,,,,1,1.0,0.0,survey_example,8,,0.0,,,-999,-999,-999,,,,,,,,,,1,1,1
+9,thqyxanb,,0,0,6,,,,0,,,0.0,fs0x5lih,,,,,1,1.0,0.0,survey_example,9,,0.0,,,-999,-999,-999,,,,,,,,,,0,1,1
+10,s2ayl13o,,0,0,6,,,,0,,,0.0,fs0x5lih,,,,,1,1.0,0.0,survey_example,10,,0.0,,,-999,-999,-999,,,,,,,,,,1,1,1
+1,rmq56xj9,,0,5,6,survey_example_appfolder,MoneyPage,2024-11-25 20:50:13.168145,1,,,0.0,l44mzozq,,,,,1,1.0,0.0,survey_example,1,,0.0,3,2,900,1440,no,23,female,,,0,,,,,0,1,1
+2,wt5lxviy,,0,0,6,,,,0,,,0.0,l44mzozq,,,,,1,1.0,0.0,survey_example,2,,0.0,,,-999,-999,,,,,,,,,,,1,1,1
+3,qo3culmt,,0,0,6,,,,0,,,0.0,l44mzozq,,,,,1,1.0,0.0,survey_example,3,,0.0,,,-999,-999,,,,,,,,,,,0,1,1
+4,at33eba9,,0,0,6,,,,0,,,0.0,l44mzozq,,,,,1,1.0,0.0,survey_example,4,,0.0,,,-999,-999,,,,,,,,,,,0,1,1
+5,w1bia5e0,,0,0,6,,,,0,,,0.0,l44mzozq,,,,,1,1.0,0.0,survey_example,5,,0.0,,,-999,-999,,,,,,,,,,,0,1,1
+6,fzlntrc9,,0,0,6,,,,0,,,0.0,l44mzozq,,,,,1,1.0,0.0,survey_example,6,,0.0,,,-999,-999,,,,,,,,,,,0,1,1
+7,vrq0nvbq,,0,0,6,,,,0,,,0.0,l44mzozq,,,,,1,1.0,0.0,survey_example,7,,0.0,,,-999,-999,,,,,,,,,,,1,1,1
+8,15wtrw0y,,0,0,6,,,,0,,,0.0,l44mzozq,,,,,1,1.0,0.0,survey_example,8,,0.0,,,-999,-999,,,,,,,,,,,1,1,1
+9,akxxbb5w,,0,0,6,,,,0,,,0.0,l44mzozq,,,,,1,1.0,0.0,survey_example,9,,0.0,,,-999,-999,,,,,,,,,,,0,1,1
+10,5tkph12o,,0,0,6,,,,0,,,0.0,l44mzozq,,,,,1,1.0,0.0,survey_example,10,,0.0,,,-999,-999,,,,,,,,,,,0,1,1
+1,q8es43e3,,0,6,6,survey_example_appfolder,EndPage,2024-11-25 20:52:35.752638,1,,,0.0,8t9cgplu,,,,,1,1.0,0.0,survey_example,1,,0.0,3,2,900,1440,no,23,female,1,,0,,,no,23.0,1,1,1
+2,2qujn7lc,,0,6,6,survey_example_appfolder,EndPage,2024-11-25 20:53:16.195148,1,,,0.0,8t9cgplu,,,,,1,1.0,0.0,survey_example,2,,0.0,3,2,900,1440,no,23,4,,3,1,,,blah,34.0,2,1,1
+3,a2hixsd2,,0,6,6,survey_example_appfolder,EndPage,2024-11-25 20:56:30.119653,1,,,0.0,8t9cgplu,,,,,1,1.0,0.0,survey_example,3,,0.0,3,2,900,1440,,29,f,,2,1,,,no,23.0,2,1,1
+4,7ouev70m,,0,3,6,survey_example_appfolder,CatsAndDogsPage,2024-11-25 20:57:47.409342,1,,,0.0,8t9cgplu,,,,,1,1.0,0.0,survey_example,4,,0.0,3,2,900,1440,,23,f,,,1,"Paraguay, Sibirien...",,,,1,1,1
+5,o0955pn8,,0,0,6,,,,0,,,0.0,8t9cgplu,,,,,1,1.0,0.0,survey_example,5,,0.0,,,-999,-999,,,,,,,,,,,1,1,1
+6,08ow85y2,,0,0,6,,,,0,,,0.0,8t9cgplu,,,,,1,1.0,0.0,survey_example,6,,0.0,,,-999,-999,,,,,,,,,,,1,1,1
+7,8ir6mm6h,,0,0,6,,,,0,,,0.0,8t9cgplu,,,,,1,1.0,0.0,survey_example,7,,0.0,,,-999,-999,,,,,,,,,,,1,1,1
+8,ig9xcmjg,,0,0,6,,,,0,,,0.0,8t9cgplu,,,,,1,1.0,0.0,survey_example,8,,0.0,,,-999,-999,,,,,,,,,,,2,1,1
+9,24qj2mtu,,0,0,6,,,,0,,,0.0,8t9cgplu,,,,,1,1.0,0.0,survey_example,9,,0.0,,,-999,-999,,,,,,,,,,,2,1,1
+10,3o0m8lal,,0,0,6,,,,0,,,0.0,8t9cgplu,,,,,1,1.0,0.0,survey_example,10,,0.0,,,-999,-999,,,,,,,,,,,1,1,1
+1,rupaqnu5,,0,6,6,survey_example_appfolder,EndPage,2024-11-25 20:58:48.595646,1,,,0.0,3fwpjl88,,,,,1,1.0,0.0,survey_example,1,,0.0,3,2,900,1440,,23,f,2,,1,nirgends,,blah,45.0,1,1,1
+2,iiecazjr,,0,0,6,,,,0,,,0.0,3fwpjl88,,,,,1,1.0,0.0,survey_example,2,,0.0,,,-999,-999,,,,,,,,,,,2,1,1
+3,lz9z1cjr,,0,0,6,,,,0,,,0.0,3fwpjl88,,,,,1,1.0,0.0,survey_example,3,,0.0,,,-999,-999,,,,,,,,,,,2,1,1
+4,xb0jay1a,,0,0,6,,,,0,,,0.0,3fwpjl88,,,,,1,1.0,0.0,survey_example,4,,0.0,,,-999,-999,,,,,,,,,,,2,1,1
+5,bdtv36on,,0,0,6,,,,0,,,0.0,3fwpjl88,,,,,1,1.0,0.0,survey_example,5,,0.0,,,-999,-999,,,,,,,,,,,1,1,1
+6,r177jsu2,,0,0,6,,,,0,,,0.0,3fwpjl88,,,,,1,1.0,0.0,survey_example,6,,0.0,,,-999,-999,,,,,,,,,,,2,1,1
+7,or8pz87x,,0,0,6,,,,0,,,0.0,3fwpjl88,,,,,1,1.0,0.0,survey_example,7,,0.0,,,-999,-999,,,,,,,,,,,1,1,1
+8,k9jrlro3,,0,0,6,,,,0,,,0.0,3fwpjl88,,,,,1,1.0,0.0,survey_example,8,,0.0,,,-999,-999,,,,,,,,,,,2,1,1
+9,u14wrkrd,,0,0,6,,,,0,,,0.0,3fwpjl88,,,,,1,1.0,0.0,survey_example,9,,0.0,,,-999,-999,,,,,,,,,,,1,1,1
+10,fmh3dkub,,0,0,6,,,,0,,,0.0,3fwpjl88,,,,,1,1.0,0.0,survey_example,10,,0.0,,,-999,-999,,,,,,,,,,,2,1,1
+1,l83by3d3,,0,6,6,survey_example_appfolder,EndPage,2024-11-25 21:13:55.661203,1,,,0.0,ca3rmpql,,,,,1,1.0,0.0,survey_example,1,,0.0,3,2,900,1440,no,23,fe,2,,1,Alaska,,no,34.0,1,1,1
+2,nsorj7yu,,0,0,6,,,,0,,,0.0,ca3rmpql,,,,,1,1.0,0.0,survey_example,2,,0.0,,,-999,-999,,,,,,,,,,,1,1,1
+3,b0tf3sot,,0,0,6,,,,0,,,0.0,ca3rmpql,,,,,1,1.0,0.0,survey_example,3,,0.0,,,-999,-999,,,,,,,,,,,2,1,1
+4,ljjguc1p,,0,0,6,,,,0,,,0.0,ca3rmpql,,,,,1,1.0,0.0,survey_example,4,,0.0,,,-999,-999,,,,,,,,,,,2,1,1
+5,8o664qn9,,0,0,6,,,,0,,,0.0,ca3rmpql,,,,,1,1.0,0.0,survey_example,5,,0.0,,,-999,-999,,,,,,,,,,,1,1,1
+6,5ayzr663,,0,0,6,,,,0,,,0.0,ca3rmpql,,,,,1,1.0,0.0,survey_example,6,,0.0,,,-999,-999,,,,,,,,,,,2,1,1
+7,55db8ots,,0,0,6,,,,0,,,0.0,ca3rmpql,,,,,1,1.0,0.0,survey_example,7,,0.0,,,-999,-999,,,,,,,,,,,1,1,1
+8,ygdvo66k,,0,0,6,,,,0,,,0.0,ca3rmpql,,,,,1,1.0,0.0,survey_example,8,,0.0,,,-999,-999,,,,,,,,,,,1,1,1
+9,01t90pzb,,0,0,6,,,,0,,,0.0,ca3rmpql,,,,,1,1.0,0.0,survey_example,9,,0.0,,,-999,-999,,,,,,,,,,,2,1,1
+10,ujzlle4c,,0,0,6,,,,0,,,0.0,ca3rmpql,,,,,1,1.0,0.0,survey_example,10,,0.0,,,-999,-999,,,,,,,,,,,1,1,1
+1,1ofmcaos,,0,2,6,survey_example_appfolder,DemoPage,2024-11-25 21:24:27.772453,1,,,0.0,szuefq7w,,,,,1,1.0,0.0,survey_example,1,,0.0,3,2,900,1440,-999,,,,,,,-999,,,2,1,1
+2,2lhx5y7z,,0,2,6,survey_example_appfolder,DemoPage,2024-11-25 21:26:57.424520,1,,,0.0,szuefq7w,,,,,1,1.0,0.0,survey_example,2,,0.0,3,2,900,1440,-999,,,,,,,-999,,,1,1,1
+3,q1itq0im,,0,0,6,,,,0,,,0.0,szuefq7w,,,,,1,1.0,0.0,survey_example,3,,0.0,,,-999,-999,-999,,,,,,,-999,,,2,1,1
+4,yzhp3kib,,0,0,6,,,,0,,,0.0,szuefq7w,,,,,1,1.0,0.0,survey_example,4,,0.0,,,-999,-999,-999,,,,,,,-999,,,1,1,1
+5,72t5alom,,0,0,6,,,,0,,,0.0,szuefq7w,,,,,1,1.0,0.0,survey_example,5,,0.0,,,-999,-999,-999,,,,,,,-999,,,2,1,1
+6,1ymkyjdr,,0,0,6,,,,0,,,0.0,szuefq7w,,,,,1,1.0,0.0,survey_example,6,,0.0,,,-999,-999,-999,,,,,,,-999,,,2,1,1
+7,3rxmt44c,,0,0,6,,,,0,,,0.0,szuefq7w,,,,,1,1.0,0.0,survey_example,7,,0.0,,,-999,-999,-999,,,,,,,-999,,,2,1,1
+8,44sx7xca,,0,0,6,,,,0,,,0.0,szuefq7w,,,,,1,1.0,0.0,survey_example,8,,0.0,,,-999,-999,-999,,,,,,,-999,,,1,1,1
+9,e5opfrtw,,0,0,6,,,,0,,,0.0,szuefq7w,,,,,1,1.0,0.0,survey_example,9,,0.0,,,-999,-999,-999,,,,,,,-999,,,1,1,1
+10,9ngyjrm2,,0,0,6,,,,0,,,0.0,szuefq7w,,,,,1,1.0,0.0,survey_example,10,,0.0,,,-999,-999,-999,,,,,,,-999,,,1,1,1
+1,ullvkfft,,0,2,6,survey_example_appfolder,DemoPage,2024-11-25 21:28:41.506038,1,,,0.0,no5rdrag,,,,,1,1.0,0.0,survey_example,1,,0.0,3,2,900,1440,-999,,,,,,,-999,,,1,1,1
+2,t9ux4hen,,0,2,6,survey_example_appfolder,DemoPage,2024-11-25 21:31:24.285699,1,,,0.0,no5rdrag,,,,,1,1.0,0.0,survey_example,2,,0.0,3,2,900,1440,-999,,,,,,,-999,,,2,1,1
+3,f7zo979i,,0,2,6,survey_example_appfolder,DemoPage,2024-11-25 21:31:54.145543,1,,,0.0,no5rdrag,,,,,1,1.0,0.0,survey_example,3,,0.0,3,2,900,1440,-999,,,,,,,-999,,,1,1,1
+4,l47azsap,,0,2,6,survey_example_appfolder,DemoPage,2024-11-25 21:32:21.361299,1,,,0.0,no5rdrag,,,,,1,1.0,0.0,survey_example,4,,0.0,3,2,900,1440,-999,,,,,,,-999,,,2,1,1
+5,o8pgj9v7,,0,2,6,survey_example_appfolder,DemoPage,2024-11-25 21:32:46.615642,1,,,0.0,no5rdrag,,,,,1,1.0,0.0,survey_example,5,,0.0,3,2,900,1440,-999,,,,,,,-999,,,1,1,1
+6,xnt5xrrd,,0,2,6,survey_example_appfolder,DemoPage,2024-11-25 21:34:37.749682,1,,,0.0,no5rdrag,,,,,1,1.0,0.0,survey_example,6,,0.0,3,2,900,1440,-999,,,,,,,-999,,,1,1,1
+7,lakdzo0d,,0,0,6,,,,0,,,0.0,no5rdrag,,,,,1,1.0,0.0,survey_example,7,,0.0,,,-999,-999,-999,,,,,,,-999,,,2,1,1
+8,hk847ycm,,0,0,6,,,,0,,,0.0,no5rdrag,,,,,1,1.0,0.0,survey_example,8,,0.0,,,-999,-999,-999,,,,,,,-999,,,2,1,1
+9,bec3ny6o,,0,0,6,,,,0,,,0.0,no5rdrag,,,,,1,1.0,0.0,survey_example,9,,0.0,,,-999,-999,-999,,,,,,,-999,,,1,1,1
+10,g6o5ui9z,,0,0,6,,,,0,,,0.0,no5rdrag,,,,,1,1.0,0.0,survey_example,10,,0.0,,,-999,-999,-999,,,,,,,-999,,,2,1,1
+1,cac0niu3,,0,6,6,survey_example_appfolder,EndPage,2024-11-26 22:02:34.516921,1,,,0.0,1putwtnc,,,,,1,1.0,0.0,survey_example,1,,0.0,3,2,900,1440,-999,23,female,,4,1,"Azerbaijan, Columbia, Niederlande",2024-11-26T22:02:36.206Z,"Ich liebe Studieren, deshalb",1000.0,2,1,1
+2,cti4qvr0,,0,6,6,survey_example_appfolder,EndPage,2024-11-26 22:03:15.911939,1,,,0.0,1putwtnc,,,,,1,1.0,0.0,survey_example,2,,0.0,3,2,900,1440,"Ich verstehe nicht, warum hier -999 steht, aber nirgends sonst.",29,Arzt,,2,0,,2024-11-26T22:03:41.124Z,Waruuuuuum,20.0,2,1,1
+3,85sgph60,,0,6,6,survey_example_appfolder,EndPage,2024-11-26 22:03:59.499752,1,,,0.0,1putwtnc,,,,,1,1.0,0.0,survey_example,3,,0.0,3,2,900,1440,Hallihalulu,23,Erdmännchen,2,,0,,2024-11-26T22:04:06.488Z,Ich hasse Essays,20.0,1,1,1
+4,27jbb87y,,0,6,6,survey_example_appfolder,EndPage,2024-11-26 22:04:28.717500,1,,,0.0,1putwtnc,,,,,1,1.0,0.0,survey_example,4,,0.0,3,2,900,1440,Hallo,25,male,,1,1,Elantris,2024-11-26T22:04:33.149Z,Nein,2000.0,2,1,1
+5,rn3mkkdw,,0,6,6,survey_example_appfolder,EndPage,2024-11-26 22:05:10.797724,1,,,0.0,1putwtnc,,,,,1,1.0,0.0,survey_example,5,,0.0,3,2,900,1440,2qär3jä,19,Katze,,5,0,,2024-11-26T22:05:26.034Z,Ich liebe Ananas was ist falsch mit euch,21.0,2,1,1
+6,oy3292fa,,0,6,6,survey_example_appfolder,EndPage,2024-11-26 22:05:50.741709,1,,,0.0,1putwtnc,,,,,1,1.0,0.0,survey_example,6,,0.0,3,2,900,1440,Truuuuuuump,29,trans,4,,1,THE USSSSS,2024-11-26T22:05:58.630Z,"I love trump and yes I am trans. Is that unlikely? Yes, yes it is.",129.0,1,1,1
+7,8f5qphj3,,0,6,6,survey_example_appfolder,EndPage,2024-11-26 22:06:41.398425,1,,,0.0,1putwtnc,,,,,1,1.0,0.0,survey_example,7,,0.0,3,2,900,1440,Hi,25,weiß ich nicht,,4,1,"Atlantis, Mars, einmal um die Welt",2024-11-26T22:06:45.055Z,Vielleicht morgen. Ja. Das lieber morgen.,35.0,2,1,1
+8,qbpq9lhz,,0,0,6,,,,0,,,0.0,1putwtnc,,,,,1,1.0,0.0,survey_example,8,,0.0,,,-999,-999,-999,,,,,,,-999,,,1,1,1
+9,pbp96lc5,,0,0,6,,,,0,,,0.0,1putwtnc,,,,,1,1.0,0.0,survey_example,9,,0.0,,,-999,-999,-999,,,,,,,-999,,,2,1,1
+10,pvcrk4v6,,0,0,6,,,,0,,,0.0,1putwtnc,,,,,1,1.0,0.0,survey_example,10,,0.0,,,-999,-999,-999,,,,,,,-999,,,2,1,1
