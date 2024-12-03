@@ -17,9 +17,16 @@
     <hr>
     Welcome to my very short and very rudimentary survey. 
     Let's begin!
+    <hr>
 
     <!-- This is the most basic way of implementing an input field -->
     {{ formfield "entry_question"}}
+
+    <!-- Optionally add a script to ensure the field starts empty if needed -->
+   <script>
+    // Use JavaScript to clear the field value if you need to hide the initial value on the form
+    document.querySelector('input[name="entry_question"]').value = '';
+   </script>
 
 
    <button class="otree-btn-next btn btn-primary next-button otree-next-button">

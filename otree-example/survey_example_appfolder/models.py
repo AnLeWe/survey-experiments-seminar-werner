@@ -35,7 +35,7 @@ class Group(BaseGroup):
    pass
 
 class Player(BasePlayer):
-    #this is the most important feature of this file. We can collect all the variables used on the html pages here
+    # this is the most important feature of this file. We can collect all the variables used on the html pages here
     
     # Assigning each player to either group 1 or 2 in the beginning
     group_assignment = models.IntegerField()
@@ -47,60 +47,68 @@ class Player(BasePlayer):
     screen_width = models.IntegerField(initial=-999)
     entry_question = models.StringField(
         blank=True, 
-        initial=-999, #this is an optional field through blank = True
-        abel = "<b>Have you ever participated in an online survey before?</b>")
+        initial=-999, 
+        widget=widgets.TextInput(),  # Standard text input
+        label = "<b>Have you ever participated in an online survey before?</b>"
+        )
     # DemoPage
     age_question = models.IntegerField(
         max=110, min=1,
-        label = "<b>How old are you?</b>")  #we can also have max and min guidelines
+        label = "<b>How old are you?</b>" #we can also have max and min guidelines
+        )
+    time_gender_popout = models.StringField(initial=-999)
     gender_question = models.StringField(
-        label = "<b>Which is your gender?</b>")
+        label = "<b>Which is your gender?</b>",
+        choices=[
+            [1, 'Female'],
+            [2, 'Male'],
+            [3, 'Non-binary'],
+            [4, 'Agender'],
+            [5, 'Other'],
+            [6, 'Prefer not to say']
+            ]
+        )
+    gender_popout = models.StringField(
+        blank=True,
+        label = '<b>How do you identify?</b>'
+        )
+    time_travel_popout = models.StringField(initial=-999)
+    has_travelled = models.BooleanField(
+        choices=[
+            [True, 'Yes'],
+            [False, 'No']]
+            )
+    travel_destination_popout = models.LongStringField(
+        blank=True,
+        label="<b>Where did you go?</b>"
+        )
     # CatsAndDogsPage
     cats_or_dogs = models.IntegerField(label="<b>Do you prefer cats or dogs?</b>") 
     # PineappleOnPizzaPage
     pineapple_on_pizza = models.IntegerField(
         label = "<b>How much do you like pineapple on pizza?</b>",
-        widget=widgets.RadioSelectHorizontal,
         choices=[
           [5, 'Heaven on earth'],
           [4, 'Like it'],
           [3, 'Neither'],
           [2, 'Don\'t like it'],
-          [1, 'Not at all']])
-    # PopoutPage
-    has_travelled = models.BooleanField(
-        choices=[
-            [True, 'Yes'],
-            [False, 'No']]
-    )
-    travel_destination_popout = models.LongStringField(
-        blank=True,
-        label="<b>Where did you go?</b>")
-    time_popout = models.StringField(initial=-999)
+          [1, 'Not at all']],
+          widget=widgets.RadioSelectHorizontal
+          )
     # MoneyPage
     money_essay = models.LongStringField(
         blank=True,
-        label="<b>Please write a short argumentative essay about why it is a moral duty to gift money to students:</b>")
+        label="<b>Please write a short argumentative essay about why it is a moral duty to gift money to students:</b>"
+        )
     money_question = models.CurrencyField(
         label="<b>How much do you want to gift me?</b>"
     )
-    # EndPage
-    group_assignment = models.IntegerField()  # Why do we assign the group on the last page?
-                                              # Also, not everyone completes the survey, bu we might still be interested in
-                                              # whether the person would have belonged to a certain group?
 
     #custom error message
         #has to: 
         #1) be in the class Player (important to indent the right way)
         #2) have a specific name "variablename"_error_message
-    def age_question_error_message(player, value):
-        if value < 18:
-            return 'I highly doubt that you are under 18. Please be honest.'
-        if value > 30:
-            return 'I highly doubt that you are over 30. Please be honest.'
-        
+
     def money_question_error_message(player, value):
         if value < 20:
-            return 'Aren\'t you a generous person? Value should be 20 or higher!'
-
-                                                
+            return 'Aren\'t you a generous person? Value should be 20 or higher!'                                       

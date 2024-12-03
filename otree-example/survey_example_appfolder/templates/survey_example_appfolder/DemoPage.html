@@ -1,67 +1,101 @@
 {% extends "global/Page.html" %}
 {% load otree static %}
 
-
 {% block title %}
 {% endblock %}
 
 {% block scripts %}
 <script>
-    //Get variables needed for our popout
-    var travelYes = document.getElementById('travelYes');
-    var divYes = document.getElementById('divYes');
-    var travelNo = document.getElementById('merkelNo');
-    var divNo = document.getElementById('divNo');
+    // Function to get current timestamp
+    function getCurrentTimestamp() {
+        return new Date().toISOString();
+    }
 
-    // TIME: we are going to write the time the participant entered the page to a variable
-    var time = new Date(); //creates the current time
-    var time = time.toISOString(); //to.ISOString() ensures we get miliseconds
+    // Gender popout function
+    function genderPopout() {
+        var genderOther = document.getElementById('genderOther');
+        var otherDiv = document.getElementById('otherDiv');
+        var timestampField = document.getElementById('time_gender_popout');
+        
+        if (genderOther.checked) {
+            otherDiv.style.display = "block";
+            timestampField.value = getCurrentTimestamp();
+        } else {
+            otherDiv.style.display = "none";
+        }
+    }
 
-    // POPOUT: we are going to create a popout function that displays text only if some value is given in another question
-    function popout() {
-    var travelYes = document.getElementById('travelYes');
-    var divYes = document.getElementById('divYes');
-    
-    divYes.style.display = travelYes.checked ? "block" : "none";
-}
-    // TIME
-    document.getElementById('time_popout').value = time; //we get the element (variable) we want to write the value to
-    //a sidenote: the time zone might be different in your localhost as in real life
+    // Travel popout function
+    function travelPopout() {
+        var travelYes = document.getElementById('travelYes');
+        var divYes = document.getElementById('divYes');
+        var timestampField = document.getElementById('time_travel_popout');
+        
+        if (travelYes.checked) {
+            divYes.style.display = "block";
+            timestampField.value = getCurrentTimestamp();
+        } else {
+            divYes.style.display = "none";
+        }
+    }
+
+    // Set initial timestamp when page loads
+    document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('time_page_load').value = getCurrentTimestamp();
+    });
 </script>
 {% endblock %}
 
 {% block content %}
 <br>
 <h2> General Questions </h2>
-    <hr>
-    <p>This is a demo page. Whatever a demo page is. However, let's first ask some general questions!</p>
+<hr>
+<p>First, we'd like to ask some general questions.</p>
+<hr>
 
-    <p>NOTE: These are a mandatory question!</p>
+<!-- Age question -->
+{{ formfield "age_question" }}
 
-    <!-- This is the most basic way of implementing an input field -->
-    {{ formfield "age_question"}}
+<!-- Hidden field to record gender popout timestamp -->
+<input id="time_gender_popout" type="hidden" name="time_gender_popout" />
+{{ formfield_errors 'time_gender_popout' }}
 
-    <!-- This is the most basic way of implementing error handling -->
-    {{ formfield_errors 'age_question' }}
+<!-- Gender question -->
+<br>
+<div>
+    <b>What is your gender?</b>
+    <div><input type="radio" name="gender_question" value="1" onclick="genderPopout()" /> Female</div>
+    <div><input type="radio" name="gender_question" value="2" onclick="genderPopout()" /> Male</div>
+    <div><input type="radio" name="gender_question" value="3" onclick="genderPopout()" /> Non-binary</div>
+    <div><input type="radio" name="gender_question" value="4" onclick="genderPopout()" /> Agender</div>
+    <div><input id="genderOther" type="radio" name="gender_question" value="5" onclick="genderPopout()" /> Other</div>
+    <div><input type="radio" name="gender_question" value="6" onclick="genderPopout()" /> Prefer not to say</div>
+</div>
 
-    {{ formfield 'gender_question' }}
+<!-- Gender "Other" popout -->
+<div id="otherDiv" style="display: none">
+    {{ formfield 'gender_popout' }}
+</div>
 
+<!-- Hidden field to record travel popout timestamp -->
+<input id="time_travel_popout" type="hidden" name="time_travel_popout" />
+{{ formfield_errors 'time_travel_popout' }}
 
-<input id="time_popout" type="hidden" name="time_popout" />
-
+<!-- Travel question -->
+<br>
 <div>
     <b>Have you ever travelled before?</b>
-    <div><input id="travelYes" type="radio" name="has_travelled" value=True onclick="popout()" /> Yes</div>
-    <div><input id="travelNo" type="radio" name="has_travelled" value=False onclick="popout()" /> No</div>
+    <div><input id="travelYes" type="radio" name="has_travelled" value=True onclick="travelPopout()" /> Yes</div>
+    <div><input id="travelNo" type="radio" name="has_travelled" value=False onclick="travelPopout()" /> No</div>
 </div>
-    
-    <!-- question asked if player has travelled before -->
+
+<!-- Travel destination popout -->
 <div id="divYes" style="display: none">
     {{ formfield 'travel_destination_popout' }}
 </div>
 
 <hr>
-   <button class="otree-btn-next btn btn-primary next-button otree-next-button">
+<button class="otree-btn-next btn btn-primary next-button otree-next-button">
     Next
 </button>
 

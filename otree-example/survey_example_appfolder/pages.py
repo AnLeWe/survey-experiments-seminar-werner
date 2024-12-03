@@ -18,14 +18,18 @@ class Welcome(Page):
 
 class DemoPage(Page):
     form_model = Player
-    form_fields = ['age_question', 'gender_question', 'has_travelled', 'travel_destination_popout', 'time_popout']
+    form_fields = ['age_question',
+                   'time_gender_popout','gender_popout', 'gender_question',
+                   'time_travel_popout','has_travelled', 'travel_destination_popout']
 
 class CatsAndDogsPage(Page):
     form_model = Player
     form_fields = ['cats_or_dogs']
 
     def is_displayed(self):
-        '''this is another otree specific function that regulates if a page is displayed or not '''
+        '''
+        this otree function that regulates if a page is displayed or not
+        '''
         #this will show the page to anybody who has the right assignment so in this case 
         return self.player.group_assignment == 1
 
@@ -34,7 +38,9 @@ class PineappleOnPizzaPage(Page):
     form_fields = ['pineapple_on_pizza']
 
     def is_displayed(self):
-        '''this is another otree specific function that regulates if a page is displayed or not '''
+        '''
+        this otree function that regulates if a page is displayed or not
+        '''
         #this will show the page to anybody who has the right assignment so in this case 
         return self.player.group_assignment == 2
 
