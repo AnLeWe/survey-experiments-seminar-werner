@@ -11,7 +11,6 @@ from otree.api import (
 
 import random  # for random group assignment
 
-
 author = 'Anna Werner'
 doc = 'This a very small survey to learn the basics, consisting of 3 pages and different types of questions.'
 
@@ -32,11 +31,15 @@ class Subsession(BaseSubsession):
             p.group_assignment = random.Random().randint(1, 2)
 
 class Group(BaseGroup):
-   pass
+   male_counter = models.IntegerField(initial=0)
 
 class Player(BasePlayer):
     # this is the most important feature of this file. We can collect all the variables used on the html pages here
     
+    # Variables on the HelperFunctions.py
+    screenout = models.BooleanField(initial=0)
+    quota = models.BooleanField(initial=0)
+
     # Assigning each player to either group 1 or 2 in the beginning
     group_assignment = models.IntegerField()
 
@@ -56,8 +59,8 @@ class Player(BasePlayer):
         max=110, min=1,
         label = "<b>How old are you?</b>" #we can also have max and min guidelines
         )
-    time_gender_popout = models.StringField(initial=-999)
-    gender_question = models.StringField(
+    time_gender_popout = models.StringField(initial=-999, blank=True)
+    gender_question = models.IntegerField(
         label = "<b>Which is your gender?</b>",
         choices=[
             [1, 'Female'],
@@ -68,11 +71,12 @@ class Player(BasePlayer):
             [6, 'Prefer not to say']
             ]
         )
+    is_male = models.BooleanField(initial=False)
     gender_popout = models.StringField(
         blank=True,
         label = '<b>How do you identify?</b>'
         )
-    time_travel_popout = models.StringField(initial=-999)
+    time_travel_popout = models.StringField(initial=-999, blank=True)
     has_travelled = models.BooleanField(
         choices=[
             [True, 'Yes'],

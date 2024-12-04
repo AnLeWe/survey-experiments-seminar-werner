@@ -6,11 +6,31 @@
 
 {% block scripts %}
 <script>
-    // Function to get current timestamp
-    function getCurrentTimestamp() {
-        return new Date().toISOString();
-    }
+    window.onload = function () {
+        
+        //import variables 
+        var screenout = {{ screenout }}; //screenout boolean
+        var quota= {{ quota }}; //quota boolean
+        var label = {{ participant_label }}; //m or tic number
+            
+            
+        // for the purpose of this seminar we have html files instead of links
+        var url_screenout = "/static/ScreenoutLink.html";
+        var url_quota = "/static/QuotaFullLink.html";
+            
+        //build urls 
+        //var url_screenout = "https://mingle.respondi.com/s/1608318/ospe.php3?c_0002=0&return_tic=" + label;
+        //c_002 = 0
+            
+        //var url_quota = "https://mingle.respondi.com/s/1608318/ospe.php3?c_0002=2&return_tic=" + label; 
+        //c_002 = 2
+            
+        if (screenout==1) {window.location.replace(url_screenout);}
+        if (quota==1) {window.location.replace(url_quota);}
+        }
+</script>
 
+<script>
     // Gender popout function
     function genderPopout() {
         var genderOther = document.getElementById('genderOther');
@@ -44,6 +64,7 @@
         document.getElementById('time_page_load').value = getCurrentTimestamp();
     });
 </script>
+
 {% endblock %}
 
 {% block content %}
@@ -52,6 +73,9 @@
 <hr>
 <p>First, we'd like to ask some general questions.</p>
 <hr>
+
+<!-- persist-raw script input -->
+<script src="{% static 'persist-raw.js' %}"></script>
 
 <!-- Age question -->
 {{ formfield "age_question" }}
@@ -64,12 +88,12 @@
 <br>
 <div>
     <b>What is your gender?</b>
-    <div><input type="radio" name="gender_question" value="1" onclick="genderPopout()" /> Female</div>
-    <div><input type="radio" name="gender_question" value="2" onclick="genderPopout()" /> Male</div>
-    <div><input type="radio" name="gender_question" value="3" onclick="genderPopout()" /> Non-binary</div>
-    <div><input type="radio" name="gender_question" value="4" onclick="genderPopout()" /> Agender</div>
-    <div><input id="genderOther" type="radio" name="gender_question" value="5" onclick="genderPopout()" /> Other</div>
-    <div><input type="radio" name="gender_question" value="6" onclick="genderPopout()" /> Prefer not to say</div>
+    <div><input type="radio" name="gender_question" value="1" class="persist" onclick="genderPopout()" /> Female</div>
+    <div><input type="radio" name="gender_question" value="2" class="persist" onclick="genderPopout()" /> Male</div>
+    <div><input type="radio" name="gender_question" value="3" class="persist" onclick="genderPopout()" /> Non-binary</div>
+    <div><input type="radio" name="gender_question" value="4" class="persist" onclick="genderPopout()" /> Agender</div>
+    <div><input id="genderOther" type="radio" name="gender_question" value="5" class="persist" onclick="genderPopout()" /> Other</div>
+    <div><input type="radio" name="gender_question" value="6" class="persist" onclick="genderPopout()" /> Prefer not to say</div>
 </div>
 
 <!-- Gender "Other" popout -->
@@ -85,8 +109,8 @@
 <br>
 <div>
     <b>Have you ever travelled before?</b>
-    <div><input id="travelYes" type="radio" name="has_travelled" value=True onclick="travelPopout()" /> Yes</div>
-    <div><input id="travelNo" type="radio" name="has_travelled" value=False onclick="travelPopout()" /> No</div>
+    <div><input id="travelYes" type="radio" name="has_travelled" value=True class="persist" onclick="travelPopout()" /> Yes</div>
+    <div><input id="travelNo" type="radio" name="has_travelled" value=False class="persist" onclick="travelPopout()" /> No</div>
 </div>
 
 <!-- Travel destination popout -->
