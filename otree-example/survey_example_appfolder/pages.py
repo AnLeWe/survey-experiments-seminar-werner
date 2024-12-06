@@ -17,21 +17,31 @@ class Welcome(Page):
 class DemoPage(Page):
     form_model = Player
     form_fields = ['age_question',
-                   'gender_question', 'gender_popout', 'time_gender_popout', 
-                   'has_travelled', 'travel_destination_popout', 'time_travel_popout']
-    
+                    'gender_question', 'gender_popout', 'time_gender_popout', 
+                    'has_travelled', 'travel_destination_popout', 'time_travel_popout']
     def before_next_page(self):
-        if self.player.gender_question == 2:  # Male
-            self.player.is_male = True
-            self.group.male_counter += 1
+            detect_screenout(self)
+            detect_quota(self)
         
-        detect_screenout(self)
-        detect_quota(self)
-    
     def vars_for_template(self):
         return {'participant_label': safe_json(self.participant.label),
                 'screenout': safe_json(self.player.screenout),
-                'quota': safe_json(self.player.quota)
+                'quota': safe_json(self.player.quota),
+                'info_quota': safe_json(self.session.vars), #display for debugging
+                'available_genders': self.session.config['available_genders']  # Pass gender options
+                }
+    def before_next_page(self):
+        detect_screenout(self)
+        detect_quota(self)
+
+class Screening(Page):
+    form_model = Player
+    def vars_for_template(self):
+        return {'participant_label': safe_json(self.participant.label),
+                'screenout': safe_json(self.player.screenout),
+                'quota': safe_json(self.player.quota),
+                'info_quota': safe_json(self.session.vars), #display for debugging
+                'available_genders': self.session.config['available_genders']  # Pass gender options
                 }
 
 class CatsAndDogsPage(Page):
@@ -76,6 +86,7 @@ class RedirectPage(Page):
 #Here we define in which ordering we want the pages to be shown. We always start with a Welcome page and end with an End page.
 page_sequence = [Welcome,
                 DemoPage,
+                Screening,
                 CatsAndDogsPage, 
                 PineappleOnPizzaPage,
                 MoneyPage,          
