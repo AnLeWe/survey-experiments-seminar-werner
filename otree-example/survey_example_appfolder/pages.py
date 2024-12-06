@@ -19,9 +19,6 @@ class DemoPage(Page):
     form_fields = ['age_question',
                     'gender_question', 'gender_popout', 'time_gender_popout', 
                     'has_travelled', 'travel_destination_popout', 'time_travel_popout']
-    def before_next_page(self):
-            detect_screenout(self)
-            detect_quota(self)
         
     def vars_for_template(self):
         return {'participant_label': safe_json(self.participant.label),
