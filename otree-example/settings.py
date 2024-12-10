@@ -1,5 +1,13 @@
 from os import environ
 
+GENDERS={
+    1: 'Female',
+    2: 'Male',
+    3: 'Non-binary',
+    4: 'Agender',
+    5: 'Other',
+    6: 'Prefer not to say'
+}
 
 SESSION_CONFIGS = [
     dict(
@@ -7,8 +15,10 @@ SESSION_CONFIGS = [
         display_name='survey_example',
         num_demo_participants=10,
         app_sequence=['survey_example_appfolder'],
+        available_genders=GENDERS
     ),
 ]
+
 
 # if you set a property in SESSION_CONFIG_DEFAULTS, it will be inherited by all configs
 # in SESSION_CONFIGS, except those that explicitly override it.
@@ -19,6 +29,9 @@ SESSION_CONFIG_DEFAULTS = dict(
     real_world_currency_per_point=1.00, participation_fee=0.00, doc=""
 )
 
+SESSION_FIELDS = list(
+    map(lambda i: f"completed_gender_{i}", GENDERS.keys())
+)
 # ISO-639 code
 # for example: de, fr, ja, ko, zh-hans
 LANGUAGE_CODE = 'en'

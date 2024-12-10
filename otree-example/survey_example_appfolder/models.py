@@ -20,18 +20,27 @@ class Constants(BaseConstants):
     num_rounds = 1
 
 class Subsession(BaseSubsession):
-    def creating_session(self):
+     def creating_session(self):
         """ 
         otree function that
         creates new subsession
         Any variables that need to be custom are created here
         """
+        if 'gender_quotas' not in self.session.vars:
+             #this for quota you wish to fill:
+            self.session.vars['gender_quotas'] = {1: 5, 2: 1, 3: 2, 4: 5, 5:1, 6:1}
+        # Create gender group counts
+        # this will also be displayed in the data you download
+        for gender in self.session.vars['gender_quotas'].keys():
+            if f"completed_gender_{gender}" not in self.session.vars:
+                self.session.vars[f"completed_gender_{gender}"] = 0
+
         for p in self.get_players(): # every player in player
             # is assigned to either group 1 or 2  randomly.
             p.group_assignment = random.Random().randint(1, 2)
 
 class Group(BaseGroup):
-   male_counter = models.IntegerField(initial=0)
+   counter = models.IntegerField(initial = 0)
 
 class Player(BasePlayer):
     # this is the most important feature of this file. We can collect all the variables used on the html pages here
@@ -60,18 +69,8 @@ class Player(BasePlayer):
         label = "<b>How old are you?</b>" #we can also have max and min guidelines
         )
     time_gender_popout = models.StringField(initial=-999, blank=True)
-    gender_question = models.IntegerField(
-        label = "<b>Which is your gender?</b>",
-        choices=[
-            [1, 'Female'],
-            [2, 'Male'],
-            [3, 'Non-binary'],
-            [4, 'Agender'],
-            [5, 'Other'],
-            [6, 'Prefer not to say']
-            ]
-        )
-    is_male = models.BooleanField(initial=False)
+    gender_question = models.IntegerField(choices=[(1, 'Female'), (2, 'Male'), (3, 'Non-binary'), (4, 'Agender'), (5, 'Other'), (6, 'Prefer not to say')], 
+                                              initial=-999, label="<b>Which is your gender?</b>")
     gender_popout = models.StringField(
         blank=True,
         label = '<b>How do you identify?</b>'
@@ -115,4 +114,4 @@ class Player(BasePlayer):
 
     def money_question_error_message(player, value):
         if value < 20:
-            return 'Aren\'t you a generous person? Value should be 20 or higher!'                                       
+            return 'Aren\'t you a generous person? Value should be 20 or higher!'  
