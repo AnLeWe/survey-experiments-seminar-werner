@@ -43,7 +43,8 @@ class Group(BaseGroup):
    counter = models.IntegerField(initial = 0)
 
 class Player(BasePlayer):
-    # this is the most important feature of this file. We can collect all the variables used on the html pages here
+    # this is the most important feature of this file. 
+    # We can collect all the variables used on the html pages here
     
     # Variables on the HelperFunctions.py
     screenout = models.BooleanField(initial=0)
