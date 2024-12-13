@@ -19,13 +19,15 @@ Generally when it comes to redirecting we distinguish between people who:
 2. people who get screened-out (meaning they did not fulfill a characteristic one agreed upon previously)
 3. people who get redirected because the quota is already full
 
-We encode those three different event in three different variables (booleans) to use for redirecting
+We encode those three different events in three different variables (booleans) to use for redirecting
 
 '''
 
 def detect_screenout(self):
-    '''this function will check for characteristics a participant needs to 
-    take part in the survey, (f.e. a certain age or being eligible to vote)'''
+    '''
+    this function will check for characteristics a participant needs to 
+    take part in the survey, (f.e. a certain age or being eligible to vote)
+    '''
 
     if self.player.age_question > 40: # screen out anybody that is not eligible
         self.player.screenout = 1
@@ -35,9 +37,9 @@ def detect_quota(self):
     
     if self.player.screenout == 0 and self.player.quota == 0:
 
-        #acces gender quotas dict
+        # Acces gender quotas dict
         gender_quotas = self.session.vars['gender_quotas']
-        #store the selected gender 
+        # Store the selected gender 
         selected_gender = self.player.gender_question 
 
         # Get the current completed count for the selected gender
