@@ -1,11 +1,12 @@
 from selenium.common.exceptions import NoSuchElementException
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 import random
-import string
 
 # This is the session-wide link
-link = 'http://localhost:8000/join/zesirape'
+link = 'http://localhost:8000/join/bahoruhu'
 
 def build_driver():
     # Set up the driver
@@ -27,8 +28,26 @@ def check_exists_by_id(driver, id):
     except NoSuchElementException:
         return 0
 
-def click_next_button(driver):
-    driver.find_element(By.XPATH, '//*[@id ="form"]/div/button').click()
+def wait_for_elements(driver, selector, by, timeout=10):
+    """Waits for multiple elements to appear before interacting with them."""
+    return WebDriverWait(driver, timeout).until(
+        EC.presence_of_all_elements_located((by, selector))
+    )
+
+def wait_for_clickable_element(driver, selector, by, timeout=10):
+    """Waits until the element is clickable before interacting with it."""
+    return WebDriverWait(driver, timeout).until(
+        EC.element_to_be_clickable((by, selector))
+    )
+
+def click_next_button(driver): #'//button[contains(@class, "otree-btn-next")]' '//button'
+    try:
+        next_button = wait_for_clickable_element(driver, '//*[@id ="form"]/div/button', By.XPATH)
+        driver.execute_script("arguments[0].scrollIntoView(true);", next_button)
+        next_button.click()
+    except Exception as e:
+        print(f"Failed to click 'Next' button: {e}")
+        raise
 
 # Function to handle the Welcome page
 def welcome_page(driver):
@@ -85,6 +104,8 @@ def screening_page(driver):
     Args:
         driver: Selenium WebDriver instance controlling the browser.
     """
+    
+    click_next_button(driver)
     pass
     # Screenout and quota URLs (modify these as needed)
     url_screenout = "/static/ScreenoutLink.html" # these are also in the Screening.html template...
@@ -100,16 +121,27 @@ def screening_page(driver):
     if quota == 1:
         driver.get(url_quota)
 
-    click_next_button(driver)
 
 # Function to handle the Cats and Dogs page
 def cats_and_dogs_page(driver):
-    cats_or_dogs_options = driver.find_elements(By.NAME, 'cats_or_dogs')
-    choice = random.choice(['1', '2', '3', '4'])  # Random choice
-    for option in cats_or_dogs_options:
-        if option.get_attribute('value') == choice:
-            option.click()
-            break
+    try:
+        # Wait for the radio buttons to appear
+        cats_or_dogs_options = wait_for_elements(driver, 'cats_or_dogs', by=By.NAME)
+        print(f"Found {len(cats_or_dogs_options)} radio buttons.")
+        
+        if len(cats_or_dogs_options) > 0:
+            rand_cats_or_dogs_index = random.randint(0, len(cats_or_dogs_options) - 1)
+            selected_radio_button = cats_or_dogs_options[rand_cats_or_dogs_index]
+            
+            # Scroll to the selected radio button
+            driver.execute_script("arguments[0].scrollIntoView(true);", selected_radio_button)
+            selected_radio_button.click()
+        else:
+            print("No radio buttons available to select.")
+            # Handle the case where no radio buttons are available
+    except Exception as e:
+        print(f"Failed to interact with Cats and Dogs page: {e}")
+        raise
 
     click_next_button(driver)
 
@@ -122,8 +154,8 @@ def pineapple_on_pizza_page(driver):
 
 # Function to handle the Money page
 def money_page(driver):
-
     donation = random.randint(21, 2000)
+    wait_for_elements(driver, 'id_money_essay', By.ID) # Wait for "money essay" textarea
     driver.find_element(By.ID, 'id_money_essay').send_keys('This is my essay.')
     driver.find_element(By.ID, 'id_money_question').send_keys(donation)
 
@@ -143,7 +175,7 @@ def run_bots(times, link):
         # Demo page - age, gender, etc.
         demo_page(driver)
         # Screening page – to old?, to many male?
-        #screening_page(driver)
+        screening_page(driver)
         # Randomized pages (Cats and Dogs or Pineapple on Pizza)
         if check_exists_by_id(driver, 'id_pineapple_on_pizza-0') == 1:  # Check for Pineapple on Pizza
             pineapple_on_pizza_page(driver)
