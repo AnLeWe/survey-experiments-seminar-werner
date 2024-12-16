@@ -6,7 +6,7 @@ from selenium.webdriver.support import expected_conditions as EC
 import random
 
 # This is the session-wide link
-link = 'http://localhost:8000/join/bahoruhu'
+link = 'http://localhost:8000/join/dunajigi'
 
 def build_driver():
     # Set up the driver
@@ -105,8 +105,9 @@ def screening_page(driver):
         driver: Selenium WebDriver instance controlling the browser.
     """
     
-    click_next_button(driver)
-    pass
+    click_next_button(driver) 
+    # remaining function Code below not executed!
+
     # Screenout and quota URLs (modify these as needed)
     url_screenout = "/static/ScreenoutLink.html" # these are also in the Screening.html template...
     url_quota = "/static/QuotaFullLink.html"
