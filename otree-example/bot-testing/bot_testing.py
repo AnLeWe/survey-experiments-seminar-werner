@@ -42,9 +42,10 @@ def wait_for_clickable_element(driver, selector, by, timeout=10):
 
 def click_next_button(driver): #'//button[contains(@class, "otree-btn-next")]' '//button'
     try:
-        next_button = wait_for_clickable_element(driver, '//*[@id ="form"]/div/button', By.XPATH)
-        driver.execute_script("arguments[0].scrollIntoView(true);", next_button)
-        next_button.click()
+        #next_button = wait_for_clickable_element(driver, '//*[@id ="form"]/div/button', By.XPATH)
+        #driver.execute_script("arguments[0].scrollIntoView(true);", next_button)
+        driver.execute_script("arguments[0].click();", driver.find_element(By.XPATH, '//*[@id ="form"]/div/button')) 
+        #next_button.click()
     except Exception as e:
         print(f"Failed to click 'Next' button: {e}")
         raise
@@ -189,4 +190,4 @@ def run_bots(times, link):
 
     print("Success!")
 
-run_bots(times=20, link=link)
+run_bots(times=10, link=link)

@@ -28,7 +28,7 @@ class Subsession(BaseSubsession):
         """
         if 'gender_quotas' not in self.session.vars:
              #this for quota you wish to fill:
-            self.session.vars['gender_quotas'] = {1: 5, 2: 1, 3: 2, 4: 5, 5:1, 6:1}
+            self.session.vars['gender_quotas'] = {1: 20, 2: 20, 3: 20, 4: 20, 5:20, 6:20}
         # Create gender group counts
         # this will also be displayed in the data you download
         for gender in self.session.vars['gender_quotas'].keys():
