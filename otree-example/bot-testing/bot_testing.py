@@ -6,7 +6,7 @@ from selenium.webdriver.support import expected_conditions as EC
 import random
 
 # This is the session-wide link
-link = 'http://localhost:8000/join/dunajigi'
+link = 'http://localhost:8000/join/gerulola'
 
 def build_driver():
     # Set up the driver
